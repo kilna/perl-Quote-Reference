@@ -7,15 +7,12 @@ use Filter::Simple;
 
 =head1 NAME
 
-Quote::Reference - Shortcut notation for whitespace-delimited array and hash references
-
-=head1 VERSION
-
-Version 1.0.1
+Quote::Reference - Shortcut notation for whitespace-delimited array and
+hash references
 
 =cut
 
-our $VERSION = '1.0.1';
+our $VERSION = '1.0.2';
 
 =head1 SYNOPSIS
 
@@ -77,7 +74,7 @@ FILTER_ONLY
 
 =head1 AUTHOR
 
-Anthony Kilna, C<< <anthony at kilna dot com> >>
+Anthony Kilna, C<< <anthony at kilna.com> >> - L<http://anthony.kilna.com>
 
 =head1 BUGS
 
@@ -85,15 +82,11 @@ Please report any bugs or feature requests to C<bug-quote-reference at rt.cpan.o
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Quote-Reference>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
-
-
-
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Quote::Reference
-
 
 You can also look for information at:
 
@@ -117,17 +110,15 @@ L<http://search.cpan.org/dist/Quote-Reference>
 
 =back
 
-
-=head1 ACKNOWLEDGEMENTS
-
-
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2009 Anthony Kilna, all rights reserved.
+Copyright 2012 Kilna Companies.
 
 This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
 
+See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
