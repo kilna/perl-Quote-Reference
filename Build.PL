@@ -12,7 +12,7 @@ my $builder = Module::Build->new(
     },
     requires => {
         'perl'           => '5.6.0',
-        'Filter::Simple' => 0,
+        'Filter::Simple' => '0.80',
     },
     add_to_cleanup      => [ 'Quote-Reference-*' ],
     create_makefile_pl => 'traditional',

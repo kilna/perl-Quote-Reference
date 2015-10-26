@@ -11,11 +11,11 @@ Quote::Reference - Shortcut notation for whitespace-delimited array and hash ref
 
 =head1 VERSION
 
-Version 1.0.0
+Version 1.0.1
 
 =cut
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.0.1';
 
 =head1 SYNOPSIS
 
@@ -77,7 +77,7 @@ FILTER_ONLY
 
 =head1 AUTHOR
 
-Anthony Kilna, C<< <anthony at kilna.com> >>
+Anthony Kilna, C<< <anthony at kilna dot com> >>
 
 =head1 BUGS
 
