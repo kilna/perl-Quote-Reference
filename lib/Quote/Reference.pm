@@ -7,12 +7,11 @@ use Filter::Simple;
 
 =head1 NAME
 
-Quote::Reference - Shortcut notation for whitespace-delimited array and
-hash references
+Quote::Reference - Create array refs with qwr(...), hash refs with qhr{...}
 
 =cut
 
-our $VERSION = '1.0.2';
+our $VERSION = '1.0.3';
 
 =head1 SYNOPSIS
 
@@ -32,45 +31,50 @@ our $VERSION = '1.0.2';
         blue   0000FF
     };
 
-=head1 DESCRIPTIONG
+=head1 DESCRIPTION
 
-This module uses source filtering to allow creating hash and array references just as easily and clean as using qw(...).
+This module uses source filtering to allow creating hash and array references
+just as easily and clean as using qw(...).
 
 The following new quotelike operators are created:
 
 =head2 qwr(...)
 
-This behaves in the same way as qw(...) except that it returns an array reference instead of a list.  
+This behaves in the same way as qw(...) except that it returns an array
+reference instead of a list.
 
 Mnemonic: qw that returns a reference
 
 =head2 qhr(...)
 
-This behaves in the same way as qw(...) except that it returns a hash reference instead of a list.  
+This behaves in the same way as qw(...) except that it returns a hash
+reference instead of a list.
 
 Mnemonic: quote for hash references
 
 =head1 CAVEATS
 
-Since this module is based on source filtering, if you have the strings 'qwr' or 'qhr' anywhere in your code, you will get unexpected results.
+Since this module is based on source filtering, if you have the strings 'qwr'
+or 'qhr' anywhere in your code, you will get unexpected results.
 
 =cut
 
 FILTER_ONLY
-    code_no_comments => sub { s/ qwr  \(  (.*?) \) /[ qw($1) ]/gsx   },
-    code_no_comments => sub { s/ qwr  \{  (.*?) \} /[ qw{$1} ]/gsx   },
-    code_no_comments => sub { s/ qwr  \[  (.*?) \] /[ qw[$1] ]/gsx   },
-    code_no_comments => sub { s/ qwr  \<  (.*?) \> /[ qw<$1> ]/gsx   },
-    code_no_comments => sub { s/ qwr (\S) (.*?) \1 /[ qw$1$2$1 ]/gsx },
-    code_no_comments => sub { s/ qhr  \(  (.*?) \) /{ qw($1) }/gsx   },
-    code_no_comments => sub { s/ qhr  \{  (.*?) \} /{ qw{$1} }/gsx   },
-    code_no_comments => sub { s/ qhr  \[  (.*?) \] /{ qw[$1] }/gsx   },
-    code_no_comments => sub { s/ qhr  \<  (.*?) \> /{ qw<$1> }/gsx   },
-    code_no_comments => sub { s/ qhr (\S) (.*?) \1 /{ qw$1$2$1 }/gsx },
-    all => sub {
-        return unless (defined $Quote::Reference::DEBUG && $Quote::Reference::DEBUG);
-        print $_
-    };
+    code_no_comments => sub {s/ qwr  \(  (.*?) \) /[ qw($1) ]/gsx},
+    code_no_comments => sub {s/ qwr  \{  (.*?) \} /[ qw{$1} ]/gsx},
+    code_no_comments => sub {s/ qwr  \[  (.*?) \] /[ qw[$1] ]/gsx},
+    code_no_comments => sub {s/ qwr  \<  (.*?) \> /[ qw<$1> ]/gsx},
+    code_no_comments => sub {s/ qwr (\S) (.*?) \1 /[ qw$1$2$1 ]/gsx},
+    code_no_comments => sub {s/ qhr  \(  (.*?) \) /{ qw($1) }/gsx},
+    code_no_comments => sub {s/ qhr  \{  (.*?) \} /{ qw{$1} }/gsx},
+    code_no_comments => sub {s/ qhr  \[  (.*?) \] /{ qw[$1] }/gsx},
+    code_no_comments => sub {s/ qhr  \<  (.*?) \> /{ qw<$1> }/gsx},
+    code_no_comments => sub {s/ qhr (\S) (.*?) \1 /{ qw$1$2$1 }/gsx},
+    all              => sub {
+        $Quote::Reference::DEBUG || return;
+        print STDERR $_;
+    },
+;
 
 =head1 AUTHOR
 
@@ -122,4 +126,4 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
-1; # End of Quote::Reference
+1;    # End of Quote::Reference
