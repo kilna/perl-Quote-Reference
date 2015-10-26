@@ -11,7 +11,7 @@ Quote::Reference - Create array refs with qwr(...), hash refs with qhr{...}
 
 =cut
 
-our $VERSION = '1.0.3';
+our $VERSION = '1.0.4';
 
 =head1 SYNOPSIS
 
@@ -56,6 +56,18 @@ Mnemonic: quote for hash references
 
 Since this module is based on source filtering, if you have the strings 'qwr'
 or 'qhr' anywhere in your code, you will get unexpected results.
+
+=head1 FAQ
+
+=over 4
+
+=item Why?  Seems pointless.
+
+I originally created this module as an experiment to familiarize myself with
+creating a CPAN module.  With that in mind, I chose something silly and
+limited in scope.  I don't expect anyone'll actually use it.  :)
+
+=back
 
 =cut
 
